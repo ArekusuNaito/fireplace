@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c15fd8fdfe6272c4fbbec6c18ff30542
+timeCreated: 1517695002
+licenseType: Pro
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 20
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nintendo DS BIOS
+  fontNames:
+  - Game Font
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 3
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
