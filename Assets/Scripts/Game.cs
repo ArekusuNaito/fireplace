@@ -9,8 +9,18 @@ public class Game : MonoBehaviour
 	public CardData theCoin;
 	public CardCollection cardCollection;
 	public TurnManager turnManager;
+	[Range(0,10)]
+	public int gameMaxMana=10;
 
-	public int playerTurn;
+	public static int MaxMana
+	{
+		get{return instance.gameMaxMana;}
+	}
+
+	[Space(10)]
+	[Header("Debug")]
+	public PlayerDebugHUD playerOneDebug;
+	public PlayerDebugHUD playerTwoDebug;
 
 	public class TurnManager
 	{
@@ -63,6 +73,8 @@ public class Game : MonoBehaviour
 		this.player1 = new Player("Luigi");
 		this.player2 = new Player("Alex");
 		this.turnManager = new TurnManager();
+		this.playerOneDebug.SetPlayer(player1);
+		
 		// turnManager.Add(player1);
 		// turnManager.Add(player2);
 
@@ -87,16 +99,19 @@ public class Game : MonoBehaviour
 		}
 
 
-		turnManager.NextTurn();
-		turnManager.NextTurn();
-		turnManager.NextTurn();
-		turnManager.NextTurn();
-		turnManager.NextTurn();
-		turnManager.NextTurn();
-		turnManager.NextTurn();
 
 
 
+
+	}
+
+
+	void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.Space))
+		{
+			turnManager.NextTurn();
+		}
 	}
 
 

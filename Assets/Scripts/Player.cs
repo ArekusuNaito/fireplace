@@ -14,7 +14,7 @@ public class Player
 	public Hand hand;
 
 	public int mana;
-	public int maxMana=10;
+	public int totalMana=0;
 	public int turn=0;
 
 	public Player(string name)
@@ -26,7 +26,7 @@ public class Player
 
 		for(int index=0;index<3;index++)
 		{
-			this.Draw();
+			this.DrawCard();
 		}
 		
 	}
@@ -35,7 +35,7 @@ public class Player
 	{
 
 		this.AddMana();
-		this.Draw();
+		this.DrawCard();
 		this.ShowHand();
 		
 	}
@@ -47,11 +47,14 @@ public class Player
 
 	public void AddMana()
 	{
-		if(this.mana>maxMana)return;
-		else this.mana++;
+		if(totalMana<Game.MaxMana)
+		{
+			totalMana++;
+			this.mana=totalMana;
+		}
 	}
 
-	public void Draw()
+	public void DrawCard()
 	{
 		var nextCard = this.deck.Draw();
 		if(this.hand.IsFull)
