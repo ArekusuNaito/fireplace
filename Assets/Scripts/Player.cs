@@ -68,10 +68,13 @@ public class Player
 
 	public void ShowHand()
 	{
-		Debug.Log($"{this.name}'s hand: {hand.Count} Deck: {deck.Count}");
-		hand.Show();
+		Debug.Log($"{this.name}'s hand: {hand.Show()}");
 	}
 
+	public void Play(CardData cardData)
+	{
+		
+	}
 
 }
 

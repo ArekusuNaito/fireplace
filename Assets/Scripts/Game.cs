@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour 
 {
@@ -9,12 +10,19 @@ public class Game : MonoBehaviour
 	public CardData theCoin;
 	public CardCollection cardCollection;
 	public TurnManager turnManager;
+	public Board board;
+	public InputField commandBox;
 	[Range(0,10)]
 	public int gameMaxMana=10;
 
 	public static int MaxMana
 	{
 		get{return instance.gameMaxMana;}
+	}
+
+	public static Player CurrentPlayer
+	{
+		get{return instance.turnManager.NextPlayer;}
 	}
 
 	[Space(10)]
@@ -28,13 +36,15 @@ public class Game : MonoBehaviour
 		
 		public TurnManager()
 		{
-			// this.players.Add(one);
-			// this.players.Add(two);
 		}
 
 		public void Add(Player player)
 		{
-			if(players.Count>=2)Debug.LogError($"Too many players in the game 🤔");
+			if(players.Count>=2)
+			{
+				Debug.LogError($"Too many players in the game 🤔");
+				return;
+			}
 			this.players.Add(player);
 		}
 
@@ -52,7 +62,7 @@ public class Game : MonoBehaviour
 			this.players.Add(nextPlayer);
 		}
 
-		private Player NextPlayer
+		public Player NextPlayer
 		{
 			get{return this.players[0];}
 		}
@@ -73,10 +83,9 @@ public class Game : MonoBehaviour
 		this.player1 = new Player("Luigi");
 		this.player2 = new Player("Alex");
 		this.turnManager = new TurnManager();
+		this.board = new Board();
 		this.playerOneDebug.SetPlayer(player1);
-		
-		// turnManager.Add(player1);
-		// turnManager.Add(player2);
+		this.playerTwoDebug.SetPlayer(player2);
 
 		//The players already have their decks created
 
@@ -108,9 +117,17 @@ public class Game : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))
+		// if(Input.GetKeyDown(KeyCode.Space))
+		// {
+		// 	turnManager.NextTurn();
+		// }
+		if(Input.GetKeyDown(KeyCode.Alpha1))
 		{
-			turnManager.NextTurn();
+			player1.ShowHand();
+		}
+		if(Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			player2.ShowHand();
 		}
 	}
 

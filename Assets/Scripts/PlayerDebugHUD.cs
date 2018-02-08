@@ -18,6 +18,7 @@ public class PlayerDebugHUD : MonoBehaviour
 
 	}
 	
+	//This can be redone with Reactive Programming 🤔
 	void UpdateValues()
 	{
 		this.playerName.text = this.player.name;

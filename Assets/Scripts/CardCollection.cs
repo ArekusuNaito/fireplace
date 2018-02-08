@@ -10,7 +10,7 @@ public class CardCollection : ScriptableObject
 	public CardData GetRandomCard()
 	{
 		var card = ScriptableObject.Instantiate(collection[RandomCardIndex]); //Instantiate will create a clon, this way the object won't be modified in editor runtime
-		Debug.Log($"Generated Card: {card.name}");
+		// Debug.Log($"Generated Card: {card.name}");
 		return 	card;
 	}
 

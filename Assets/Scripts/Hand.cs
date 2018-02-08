@@ -25,10 +25,10 @@ public class Hand
 
 	public string Show()
 	{
-		var message="";
+		var message="\n";
 		foreach(var card in cards)
 		{
-			message+=$"{card.name} \n";
+			message+=$"{card.manaCost} {card.name} {card.attack}/{card.health} \n";
 		}
 		return message;
 	}
