@@ -11,7 +11,8 @@ public class Game : MonoBehaviour
 	public CardCollection cardCollection;
 	public TurnManager turnManager;
 	public Board board;
-	public InputField commandBox;
+	public CommandBox commandBox;
+	public CommandExecutor commandExecutor;
 	[Range(0,10)]
 	public int gameMaxMana=10;
 
@@ -80,6 +81,8 @@ public class Game : MonoBehaviour
 	void Awake()
 	{
 		Setup();
+		this.commandExecutor = new CommandExecutor();
+		this.commandBox.executor = this.commandExecutor; //Add the executor to the commandBox
 		this.player1 = new Player("Luigi");
 		this.player2 = new Player("Alex");
 		this.turnManager = new TurnManager();
@@ -117,10 +120,10 @@ public class Game : MonoBehaviour
 
 	void Update()
 	{
-		// if(Input.GetKeyDown(KeyCode.Space))
-		// {
-		// 	turnManager.NextTurn();
-		// }
+		if(Input.GetKeyDown(KeyCode.Space))
+		{
+			// turnManager.NextTurn();
+		}
 		if(Input.GetKeyDown(KeyCode.Alpha1))
 		{
 			player1.ShowHand();

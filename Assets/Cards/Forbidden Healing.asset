@@ -16,5 +16,5 @@ MonoBehaviour:
   health: 0
   attack: 0
   type: 3
-  heroClass: 0
+  heroClass: 1
   effects: 

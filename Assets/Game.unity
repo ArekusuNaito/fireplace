@@ -345,7 +345,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 142180278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -237.29419, y: 89.4375, z: 0}
+  m_LocalPosition: {x: -245.50249, y: 92.53125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1054112216}
@@ -1249,7 +1249,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724333313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -121, z: 0}
+  m_LocalPosition: {x: 1.4947281, y: -122.90582, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 58720232}
@@ -1257,10 +1257,10 @@ RectTransform:
   m_Father: {fileID: 2030892998}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -121}
-  m_SizeDelta: {x: -476, y: -328}
+  m_AnchorMin: {x: 0.35354325, y: 0.118230455}
+  m_AnchorMax: {x: 0.651, y: 0.22574349}
+  m_AnchoredPosition: {x: 0.0000023841858, y: -1.5}
+  m_SizeDelta: {x: 0, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724333315
 MonoBehaviour:
@@ -1808,7 +1808,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1719267450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.00093, y: 89.4375, z: 0}
+  m_LocalPosition: {x: -77.62298, y: 92.53125, z: 0}
   m_LocalScale: {x: 0.9998235, y: 0.9998235, z: 0.9998235}
   m_Children:
   - {fileID: 2022012055}
@@ -2068,7 +2068,7 @@ RectTransform:
   m_GameObject: {fileID: 1860296773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.027952481, y: 0.027952481, z: 0.027952481}
+  m_LocalScale: {x: 0.027017899, y: 0.027017899, z: 0.027017899}
   m_Children:
   - {fileID: 2030892998}
   m_Father: {fileID: 0}
@@ -2267,7 +2267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theCoin: {fileID: 11400000, guid: 7262c1bd7777d3846a5e762963d2d44c, type: 2}
   cardCollection: {fileID: 11400000, guid: fcd271bcf3e2d3c4f8add41879dcd03c, type: 2}
-  commandBox: {fileID: 0}
+  commandBox: {fileID: 724333318}
   gameMaxMana: 10
   playerOneDebug: {fileID: 142180280}
   playerTwoDebug: {fileID: 1719267452}
