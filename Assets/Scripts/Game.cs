@@ -23,7 +23,16 @@ public class Game : MonoBehaviour
 
 	public static Player CurrentPlayer
 	{
-		get{return instance.turnManager.NextPlayer;}
+		get{return instance.turnManager.CurrentPlayer;}
+	}
+	public static void EndTurn()
+	{
+		instance.turnManager.NextTurn();
+	}
+
+	public static Board Board
+	{
+		get{return instance.board;}
 	}
 
 	[Space(10)]
@@ -63,6 +72,11 @@ public class Game : MonoBehaviour
 			this.players.Add(nextPlayer);
 		}
 
+		public Player CurrentPlayer
+		{
+			get{return this.players[1];}
+		}
+
 		public Player NextPlayer
 		{
 			get{return this.players[0];}
@@ -81,22 +95,7 @@ public class Game : MonoBehaviour
 	void Awake()
 	{
 		Setup();
-		this.commandExecutor = new CommandExecutor();
-		this.commandBox.executor = this.commandExecutor; //Add the executor to the commandBox
-		this.player1 = new Player("Luigi");
-		this.player2 = new Player("Alex");
-		this.turnManager = new TurnManager();
-		this.board = new Board();
-		this.playerOneDebug.SetPlayer(player1);
-		this.playerTwoDebug.SetPlayer(player2);
-
-		//The players already have their decks created
-
-		//Start the match
-		//Decide who goes first
-
-		
-
+		//Game start!
 		var coin = ThrowTheCoin();
 		if(coin == 0)
 		{
@@ -109,12 +108,8 @@ public class Game : MonoBehaviour
 			AddCoinTo(player2);
 			turnManager.InitialOrder(player1,player2);
 		}
-
-
-
-
-
-
+		turnManager.NextTurn(); //Turn 1 the first player
+		this.commandBox.RecoverFocus();
 	}
 
 
@@ -138,6 +133,15 @@ public class Game : MonoBehaviour
 	void Setup()
 	{
 		Game.instance = this;
+		//
+		this.commandExecutor = new CommandExecutor();
+		this.commandBox.executor = this.commandExecutor; //Add the executor to the commandBox
+		this.player1 = new Player("Luigi");
+		this.player2 = new Player("Alex");
+		this.turnManager = new TurnManager();
+		this.board = new Board(player1,player2);
+		this.playerOneDebug.SetPlayer(player1);
+		this.playerTwoDebug.SetPlayer(player2);
 	}
 
 
@@ -149,7 +153,6 @@ public class Game : MonoBehaviour
 	public int ThrowTheCoin()
 	{
 		var coinResult = Random.Range(0,2); //Heads or tails
-		Debug.Log($"{coinResult}");
 		return coinResult;
 
 	}

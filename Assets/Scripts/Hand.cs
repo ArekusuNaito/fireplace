@@ -12,6 +12,20 @@ public class Hand
 		
 	}
 
+	public CardData FindCard(string cardName)
+	{
+		foreach(var cardData in this.cards)
+		{
+			if(cardData.name.ToLower() == cardName.ToLower())return cardData;
+		}
+		return null;
+	}
+
+	public void Remove(CardData cardData)
+	{
+		this.cards.Remove(cardData);
+	}
+
 	public int Count
 	{
 		get{return this.cards.Count;}

@@ -20,6 +20,10 @@ public class CardData : ScriptableObject
         Battlecry,Deathrattle,EndOfTurn,Poison,SpellQuestionMark
     }
 
+    public bool IsMinion
+    {
+        get{return this.type != Type.Spell?true:false;}
+    }
 
     public enum Type
     {

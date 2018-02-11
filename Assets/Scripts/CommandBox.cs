@@ -22,7 +22,7 @@ public class CommandBox : MonoBehaviour
 		});
 	}
 
-	void RecoverFocus()
+	public void RecoverFocus()
 	{
 		this.inputField.ActivateInputField();
 	}
