@@ -7,7 +7,7 @@ using UnityEngine;
 public class Deck 
 {
 	public int maxSize=30;
-	private List<CardData> cards = new List<CardData>();
+	private List<Card> cards = new List<Card>();
 	private int drawIndex=0;
 
 	Hand hand;
@@ -25,14 +25,14 @@ public class Deck
 		get{return this.cards.Count;}
 	}
 
-	public CardData Draw()
+	public Card Draw()
 	{
 		var nextCard = NextCard;
 		this.cards.Remove(nextCard);
 		return NextCard;
 	}
 
-	private CardData NextCard //TopDeck? //This function can be used for cards like "Look at the top of your deck"
+	private Card NextCard //TopDeck? //This function can be used for cards like "Look at the top of your deck"
 	{
 		get{return this.cards[drawIndex];}
 	}

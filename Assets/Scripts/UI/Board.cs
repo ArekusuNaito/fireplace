@@ -34,7 +34,7 @@ public class Board : MonoBehaviour
 	}
 
 	
-	public void Summon(CardData card)
+	public void Summon(Card card)
 	{
 
 		var minionOriginal = Resources.Load<Minion>("Minion");

@@ -6,7 +6,7 @@ using UnityEngine;
 using System;
 
 [CreateAssetMenu(fileName = "New Card Data", menuName = "Card/New Card", order = 1)]
-public class CardData : ScriptableObject 
+public class Card : ScriptableObject 
 {
 	//Attributes from a card
     public Sprite sprite;

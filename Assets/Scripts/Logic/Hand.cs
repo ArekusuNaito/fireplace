@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Hand 
 {
-	private List<CardData> cards = new List<CardData>();
+	private List<Card> cards = new List<Card>();
 	public int maxSize = 10; //Your hand cannot exceed this
 
 	public Hand()
@@ -14,7 +14,7 @@ public class Hand
 		
 	}
 
-	public CardData FindCard(string cardName)
+	public Card FindCard(string cardName)
 	{
 		foreach(var cardData in this.cards)
 		{
@@ -23,7 +23,7 @@ public class Hand
 		return null;
 	}
 
-	public void Remove(CardData cardData)
+	public void Remove(Card cardData)
 	{
 		this.cards.Remove(cardData);
 	}
@@ -49,7 +49,7 @@ public class Hand
 		return message;
 	}
 
-	public void Add(CardData card)
+	public void Add(Card card)
 	{
 		this.cards.Add(card);
 	}

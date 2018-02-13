@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
 {
 	private static Game instance;
 	public Player player1,player2;
-	public CardData theCoin;
+	public Card theCoin;
 	public CardCollection cardCollection;
 	public TurnManager turnManager;
 	public CommandBox commandBox;

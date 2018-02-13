@@ -7,20 +7,20 @@
 
 public class PlayerBoard
 {
-    public List<CardData> minions = new List<CardData>();
+    public List<Card> minions = new List<Card>();
 
 	public PlayerBoard()
 	{
-		this.minions = new List<CardData>(Game.BoardSize);
+		this.minions = new List<Card>(Game.BoardSize);
 	}
 
-    public void SummonMinion(CardData card)
+    public void SummonMinion(Card card)
     {
         this.minions.Add(card);
         //card.BattleCry();
     }
 
-	public CardData MostPowerfulMinion
+	public Card MostPowerfulMinion
 	{
 		get
 		{
@@ -31,7 +31,7 @@ public class PlayerBoard
 		}
 	}
 
-	public CardData MostHealthyMinion
+	public Card MostHealthyMinion
 	{
 		get
 		{

@@ -27,6 +27,7 @@ public class PlayerDebugHUD : MonoBehaviour
 		this.deckCount.text = this.player.deck.Count.ToString();
 		this.handCount.text = this.player.hand.Count.ToString();
 		this.mana.text = $"{this.player.mana} / {this.player.totalMana}";
+		this.health.text = this.player.health.ToString();
 	}
 	public void Update()
 	{
