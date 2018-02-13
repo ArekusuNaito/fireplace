@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UI;
+using Logic;
 
 public class PlayerDebugHUD : MonoBehaviour 
 {

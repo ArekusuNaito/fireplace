@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿namespace Logic
+{
+	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,5 +21,7 @@ public class CardCollection : ScriptableObject
 		get{return Random.Range(0,collection.Count);}
 	}
 
+
+}
 
 }

@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿namespace Logic
+{
+	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Text.RegularExpressions;
+
 
 // Artanis: Yes, Executor!
 public class CommandExecutor  
@@ -17,6 +20,7 @@ public class CommandExecutor
 			["hand"] = this.ShowHand,
 			["end"] = this.EndTurn,
 			["play"] = this.PlayCard,
+			["attack"] = this.Attack
 		};
 	}
 	public void Process(string command)
@@ -35,7 +39,6 @@ public class CommandExecutor
 			if(this.commands.ContainsKey(action))
 			{
 				var executeCommand = this.commands[action];
-				Debug.Log("Executing"+executeCommand);	
 				executeCommand(parameter);
 			}
 		}
@@ -47,7 +50,6 @@ public class CommandExecutor
 			if(this.commands.ContainsKey(action))
 			{
 				var executeCommand = this.commands[action];
-				Debug.Log("Executing"+executeCommand);	
 				executeCommand(null);
 			}
 		}
@@ -64,7 +66,13 @@ public class CommandExecutor
 	}
 	public void PlayCard(string cardName)
 	{
-
 		Game.CurrentPlayer.Play(cardName);
 	}
+
+	public void Attack(string cardName=null)
+	{
+		Game.CurrentPlayer.Attacks();		
+	}
+}
+
 }

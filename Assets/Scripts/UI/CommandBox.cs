@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿namespace UI
+{
+	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Logic;
 
 public class CommandBox : MonoBehaviour 
 {
@@ -32,4 +35,6 @@ public class CommandBox : MonoBehaviour
 		this.inputField.text  = "";
 	}
 	
+}
+
 }

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c301bc49bb19d24493fe7524d4ecf15, type: 3}
   m_Name: Silver Hand Murloc
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: efda6e8f42b40c944ace52f12dace178, type: 3}
   name: Silver Hand Murloc
   manaCost: 1
   health: 1

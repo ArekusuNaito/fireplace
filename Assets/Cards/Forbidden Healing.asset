@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c301bc49bb19d24493fe7524d4ecf15, type: 3}
   m_Name: Forbidden Healing
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   name: Forbidden Healing
   manaCost: 0
   health: 0

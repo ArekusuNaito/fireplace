@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿namespace Logic
+{
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,6 +9,7 @@ using System;
 public class CardData : ScriptableObject 
 {
 	//Attributes from a card
+    public Sprite sprite;
     public new string name;
     public int manaCost;
     public int health;
@@ -29,4 +32,6 @@ public class CardData : ScriptableObject
     {
         Murloc,Beast,Demon,Spell
     }
+}
+
 }
