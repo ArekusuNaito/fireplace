@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Logic;
 
-public class Board : MonoBehaviour 
+public class PlayerBoard : MonoBehaviour 
 {	
-	
+	public Logic.PlayerBoard data;
 	public List<Minion> minions = new List<Minion>();
 	private RectTransform rectTransform;
 	private float Width
@@ -34,18 +34,29 @@ public class Board : MonoBehaviour
 	}
 
 	
-	public void Summon(Card card)
+	public void Summon(Logic.Minion minionData)
 	{
-
-		var minionOriginal = Resources.Load<Minion>("Minion");
-		
-		var minion = Instantiate(minionOriginal,this.transform,false);
-		
+		var minionPrefab = Resources.Load<Minion>("Minion");
+		var minion = Instantiate(minionPrefab,this.transform,false);
 		minion.SetLocalPosition(new Vector2(this.rectTransform.rect.center.x, this.Max.y-(minion.Height*minions.Count)));
-		minion.SetData(card.sprite,card.attack,card.health);
-		minions.Add(minionOriginal);
+		minion.SetData(minionData);
+		minions.Add(minion);
 	}
 
+	public void Remove(Logic.Minion minionData)
+	{
+		var minion = FindMinion(minionData);
+		Debug.Log($"UI Board is Removing: {minion.data.Name} {minion.data.health}");
+		this.minions.Remove(minion);
+		Destroy(minion.gameObject);
+		//Reposition minions?
+	}
+
+	public Minion FindMinion(Logic.Minion minionData)
+	{
+		return this.minions.Find(queryMinion=> minionData==queryMinion.data);
+		
+	}
 }
 
 }

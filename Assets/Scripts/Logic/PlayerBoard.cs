@@ -7,20 +7,32 @@
 
 public class PlayerBoard
 {
-    public List<Card> minions = new List<Card>();
+    public List<Minion> minions = new List<Minion>();
 
 	public PlayerBoard()
 	{
-		this.minions = new List<Card>(Game.BoardSize);
+		this.minions = new List<Minion>(Game.BoardSize);
 	}
 
-    public void SummonMinion(Card card)
+    public Minion SummonMinion(Card card)
     {
-        this.minions.Add(card);
+		Minion minion = new Minion(card);
+        this.minions.Add(minion);
         //card.BattleCry();
+		return minion;
     }
 
-	public Card MostPowerfulMinion
+	public void Remove(Minion minion)
+	{
+		this.minions.Remove(minion);
+	}
+
+	public Minion FindMinion(Minion minion)
+	{
+		return this.minions.Find(queryMinion=> minion==queryMinion);
+	}
+
+	public Minion MostPowerfulMinion
 	{
 		get
 		{
@@ -31,7 +43,12 @@ public class PlayerBoard
 		}
 	}
 
-	public Card MostHealthyMinion
+	public int Count
+	{
+		get{return this.minions.Count;}
+	}
+
+	public Minion MostHealthyMinion
 	{
 		get
 		{
@@ -40,16 +57,6 @@ public class PlayerBoard
 				return minion1.health>minion2.health?minion1:minion2;
 			});
 		}
-	}
-
-    public string Show()
-	{
-		var message="\n";
-		foreach(var card in minions)
-		{
-			message+=$"{card.manaCost} {card.name} {card.attack}/{card.health} \n";
-		}
-		return message;
 	}
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +11,7 @@ public class Minion : MonoBehaviour
     public Text attack;
     public Text health;
     private RectTransform rectTransform;
+    public Logic.Minion data;
 
     public float Width
     {
@@ -32,12 +33,12 @@ public class Minion : MonoBehaviour
         this.rectTransform.localPosition = newPosition;
     }
 
-    public void SetData(Sprite sprite,int attack, int health)
+    public void SetData(Logic.Minion data)
     {
-        this.image.sprite = sprite;
-        this.attack.text = attack.ToString();
-        this.health.text = health.ToString();
+        this.data = data;
+        this.image.sprite = data.Sprite;
     }
+
 
 }
 

@@ -20,8 +20,8 @@ public class Game : MonoBehaviour
 	[Range(1,7)] 
 	public int boardSize=3;
 	//
-	public Board player1Board;
-	public Board player2Board;
+	public UI.PlayerBoard player1Board;
+	public UI.PlayerBoard player2Board;
 
 
 	[Space(10)]
@@ -126,6 +126,11 @@ public class Game : MonoBehaviour
 		}
 		turnManager.NextTurn(); //Turn 1 the first player
 		this.commandBox.RecoverFocus();
+
+		//You can simmulate your actions in here
+		// this.commandExecutor.PlayCard("silver hand murloc");
+		// this.commandExecutor.EndTurn();
+		// this.commandExecutor.PlayCard("silver hand murloc");
 	}
 
 
